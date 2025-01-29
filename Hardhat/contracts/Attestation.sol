@@ -30,4 +30,8 @@ contract LaborerAttestation is ERC721 {
         _tokenIds.increment();
         _mint(msg.sender, _tokenIds.current());
     }
+
+    function hasAttestation(address user) public view returns (bool) {
+        return balanceOf(user) > 0;
+    }
 }
